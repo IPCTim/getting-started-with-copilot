@@ -90,6 +90,46 @@ h3 {
   color: #666;
 }
 
+.participants-count {
+  margin-bottom: 1rem !important;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.participants-section {
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+.participants-section strong {
+  display: block;
+  color: #667eea;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.participants-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.participants-list li {
+  padding: 0.5rem 0.75rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  margin-bottom: 0.5rem;
+  border-left: 4px solid #667eea;
+  border-radius: 4px;
+  color: #333;
+  font-size: 0.95rem;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.participants-list li:hover {
+  background: linear-gradient(135deg, #e8ecf1 0%, #b0c3d4 100%);
+  transform: translateX(4px);
+}
+
 .signup-form {
   width: 100%;
 }
