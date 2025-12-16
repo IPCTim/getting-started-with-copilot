@@ -61,6 +61,36 @@ var activities = new Dictionary<string, Activity>
         Schedule = "Mondays, Wednesdays, Fridays, 2:00 PM - 3:00 PM",
         MaxParticipants = 30,
         Participants = new List<string> { "john@mergington.edu", "olivia@mergington.edu" }
+    },
+    // Artistic activities
+    ["Art Workshop"] = new Activity
+    {
+        Description = "Explore painting, drawing, and mixed media techniques",
+        Schedule = "Wednesdays, 3:30 PM - 5:00 PM",
+        MaxParticipants = 15,
+        Participants = new List<string> { "amelia@mergington.edu" }
+    },
+    ["Drama Club"] = new Activity
+    {
+        Description = "Acting, improvisation, and stage production",
+        Schedule = "Mondays, 3:30 PM - 5:00 PM",
+        MaxParticipants = 25,
+        Participants = new List<string> { "liam@mergington.edu" }
+    },
+    // Intellectual activities
+    ["Math Circle"] = new Activity
+    {
+        Description = "Problem solving and mathematical exploration",
+        Schedule = "Thursdays, 4:00 PM - 5:30 PM",
+        MaxParticipants = 20,
+        Participants = new List<string> { "noah@mergington.edu" }
+    },
+    ["Science Club"] = new Activity
+    {
+        Description = "Hands-on experiments and scientific inquiry",
+        Schedule = "Tuesdays, 3:30 PM - 5:00 PM",
+        MaxParticipants = 18,
+        Participants = new List<string> { "ava@mergington.edu" }
     }
 };
 
