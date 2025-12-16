@@ -88,3 +88,6 @@ app.MapPost("/api/activities/{activityName}/signup", (string activityName, Signu
 app.MapFallbackToFile("index.html");
 
 app.Run();
+
+// Allow tests to reference the entry point with WebApplicationFactory
+public partial class Program { }
