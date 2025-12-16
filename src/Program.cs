@@ -91,6 +91,21 @@ var activities = new Dictionary<string, Activity>
         Schedule = "Tuesdays, 3:30 PM - 5:00 PM",
         MaxParticipants = 18,
         Participants = new List<string> { "ava@mergington.edu" }
+    },
+    // Sports activities
+    ["Soccer Team"] = new Activity
+    {
+        Description = "Competitive soccer training and league matches",
+        Schedule = "Tuesdays and Thursdays, 4:00 PM - 5:30 PM",
+        MaxParticipants = 22,
+        Participants = new List<string> { "jackson@mergington.edu", "mia@mergington.edu" }
+    },
+    ["Swimming Club"] = new Activity
+    {
+        Description = "Swimming technique development and water safety",
+        Schedule = "Mondays and Wednesdays, 4:00 PM - 5:00 PM",
+        MaxParticipants = 20,
+        Participants = new List<string> { "ethan@mergington.edu" }
     }
 };
 
