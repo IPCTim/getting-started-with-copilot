@@ -75,6 +75,25 @@ function App() {
     }
   };
 
+  const handleRemoveParticipant = async (activityName: string, email: string) => {
+    try {
+      const response = await fetch(`/api/activities/${encodeURIComponent(activityName)}/signup/${encodeURIComponent(email)}`, {
+        method: 'DELETE',
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to unregister');
+      }
+
+      // Refresh activities to show updated participant list
+      const activitiesResponse = await fetch('/api/activities');
+      const updatedActivities = await activitiesResponse.json();
+      setActivities(updatedActivities);
+    } catch (err) {
+      console.error('Error removing participant:', err);
+    }
+  };
+
   if (loading) return <div>Loading activities...</div>;
   if (error) return <div>Error: {error}</div>;
 
@@ -93,7 +112,27 @@ function App() {
                 <h4>{name}</h4>
                 <p><strong>Description:</strong> {activity.description}</p>
                 <p><strong>Schedule:</strong> {activity.schedule}</p>
-                <p><strong>Participants:</strong> {activity.participants.length}/{activity.maxParticipants}</p>
+                <p className="participants-count"><strong>Participants:</strong> {activity.participants.length}/{activity.maxParticipants}</p>
+                {activity.participants.length > 0 && (
+                  <div className="participants-section">
+                    <strong>Signed Up:</strong>
+                    <ul className="participants-list">
+                      {activity.participants.map((participant, index) => (
+                        <li key={index} className="participant-item">
+                          <span>{participant}</span>
+                          <button
+                            className="delete-btn"
+                            onClick={() => handleRemoveParticipant(name, participant)}
+                            title="Unregister participant"
+                            aria-label={`Remove ${participant}`}
+                          >
+                            ×
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             ))}
           </div>
