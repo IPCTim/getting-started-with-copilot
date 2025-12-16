@@ -78,6 +78,12 @@ app.MapPost("/api/activities/{activityName}/signup", (string activityName, Signu
 
     var activity = activities[activityName];
 
+    // Prevent duplicate enrollment
+    if (activity.Participants.Contains(request.Email))
+    {
+        return Results.Conflict(new { detail = $"{request.Email} is already enrolled in {activityName}" });
+    }
+
     // Add student
     activity.Participants.Add(request.Email);
     return Results.Ok(new { message = $"Signed up {request.Email} for {activityName}" });
